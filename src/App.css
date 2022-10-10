@@ -4,6 +4,9 @@
 
 .App {
   text-align: center;
+  height: 100vh;
+  overflow: hidden;
+  padding-top: 200px;
 }
 
 .container {
@@ -14,7 +17,8 @@
   height: fit-content;
   width: 50%;
   padding: 10px;
-  margin: 200px auto;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 5px;
 }
 
@@ -23,26 +27,25 @@
   font-size: 2rem;
 }
 
-.right-quote {
-  float: right;
-}
-
-.text {
-  
-}
-
 .author {
   margin: 20px 0 30px;
 }
 
-
-#tweet-quote {
+.tweet-quote {
   color: white;
   font-weight: bold;
   margin: 10px 0;
 }
-#new-quote {
+
+a:visited {
+  color: white !important;
+}
+
+a:hover {
+  color: white !important;
+}
+
+.new-quote {
   margin: 10px 0;
   font-weight: bold;
 }
-
