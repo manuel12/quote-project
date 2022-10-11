@@ -11,7 +11,7 @@
   height: 100vh;
   overflow: hidden;
   padding-top: 200px;
-  transition: background 0.5s;
+  transition: background-color 0.5s;
 }
 
 .container {
@@ -49,6 +49,7 @@
 
 .quote-text {
   font-style: italic;
+  font-weight: 400 !important;
 }
 
 .quote-author {
@@ -61,11 +62,65 @@
   color: white;
   font-weight: bold;
   margin: 10px 0;
-  transition: background 2s;
+  transition: background-color 2s;
+}
+
+.fa-share {
+  color: white;
 }
 
 .new-quote {
   margin: 10px 0;
   font-weight: bold;
-  transition: background 2s;
+  transition: background-color 2s;
+}
+
+
+.red {
+  color: #e52826 !important;
+}
+
+.yellow {
+  color: #d5c000 !important;
+}
+
+.black {
+  color: #121416 !important;
+}
+
+.orange {
+  color: #ef8e01 !important;
+}
+
+.blue {
+  color: #5098b2 !important;
+}
+
+.green {
+  color: #468e27 !important;
+}
+
+
+.red {
+  background-color: #e52826 !important;
+}
+
+.yellow {
+  background-color: #d5c000 !important;
+}
+
+.black {
+  background-color: #121416 !important;
+}
+
+.orange {
+  background-color: #ef8e01 !important;
+}
+
+.blue {
+  background-color: #5098b2 !important;
+}
+
+.green {
+  background-color: #468e27 !important;
 }
