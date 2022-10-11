@@ -12,17 +12,18 @@ import newQuotes from "./new-quotes.json";
 import "./App.css";
 
 function App() {
+  const [soundEnabled, setSoundEnabled] = useState(true);
+  const [canPlaySound, setCanPlaySound] = useState(false);
+  const [soundVolume, setSoundVolume] = useState(0.3);
+  const [audioLoop] = useState(true);
+
   const [audio] = useState(
     new Audio(
       "https://ia600900.us.archive.org/12/items/tvtunes_7001/Pulp%20Fiction.mp3"
     )
   );
-
-  const [soundEnabled, setSoundEnabled] = useState(true);
-  const [canPlaySound, setCanPlaySound] = useState(false);
-  const [soundVolume, setSoundVolume] = useState(0.3);
   audio.volume = soundVolume;
-  audio.loop = true;
+  audio.loop = audioLoop;
 
   const [currentQuote, setCurrentQuote] = useState({ text: "", author: "" });
   const [currentColor, setCurrentColor] = useState("primary");
@@ -37,16 +38,35 @@ function App() {
     return randomQuote;
   };
 
+  const pulpFictionColors = [
+    {
+      "name": "red",
+      "code": "#e52826"
+    },
+    {
+      "name": "yellow",
+      "code": "#ffe701"
+    },
+    {
+      "name": "black",
+      "code": "#121416"
+    },
+    {
+      "name": "orange",
+      "code": "#ef8e01"
+    },
+    {
+      "name": "blue",
+      "code": "#5098b2"
+    },
+    {
+      "name": "green",
+      "code": "#468e27"
+    },
+  ]
+
   const getRandomColor = () => {
-    const colors = [
-      "primary",
-      "secondary",
-      "success",
-      "danger",
-      "warning",
-      "info",
-      "dark",
-    ];
+    const colors = pulpFictionColors.map((colorObj) => colorObj.name);
     const randomIndex = getRandomNumber(colors.length);
     const randomColor = colors[randomIndex];
     return randomColor;
@@ -83,7 +103,7 @@ function App() {
   };
 
   return (
-    <div className={`App bg-${currentColor}`}>
+    <div className={`App ${currentColor}`}>
       <div className="container">
         {canPlaySound && (
           <button className="sound-button" onClick={soundButtonClickHandler}>
@@ -101,11 +121,14 @@ function App() {
             {currentQuote.text}
           </div>
 
-          <div id="author" className="quote-author">{`-${currentQuote.author}`}</div>
+          <div
+            id="author"
+            className="quote-author"
+          >{`-${currentQuote.author}`}</div>
 
           <div className="row">
             <div className="col-md-6">
-              <button className={`tweet-quote btn btn-${currentColor}`}>
+              <button className={`tweet-quote btn ${currentColor}`}>
                 <FontAwesomeIcon icon={faShare} />
                 <a
                   id="tweet-quote"
@@ -119,7 +142,7 @@ function App() {
             </div>
             <div className="col-md-6">
               <button
-                className={`new-quote btn btn-${currentColor} text-light`}
+                className={`new-quote btn ${currentColor} text-light`}
                 id="new-quote"
                 onClick={newQuoteClickHandler}
               >
