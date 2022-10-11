@@ -22,6 +22,7 @@ function App() {
   const [canPlaySound, setCanPlaySound] = useState(false);
   const [soundVolume, setSoundVolume] = useState(0.3);
   audio.volume = soundVolume;
+  audio.loop = true;
 
   const [currentQuote, setCurrentQuote] = useState({ text: "", author: "" });
   const [currentColor, setCurrentColor] = useState("primary");
@@ -96,11 +97,11 @@ function App() {
 
         <div id="quote-box" className="bg-white">
           <FontAwesomeIcon icon={faQuoteLeft} className="left-quote" />
-          <div id="text" className="display-6 text">
+          <div id="text" className="display-6 quote-text">
             {currentQuote.text}
           </div>
 
-          <div id="author" className="author">{`-${currentQuote.author}`}</div>
+          <div id="author" className="quote-author">{`-${currentQuote.author}`}</div>
 
           <div className="row">
             <div className="col-md-6">
