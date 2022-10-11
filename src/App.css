@@ -2,15 +2,35 @@
   border: 1px solid black;
 } */
 
+/* body {
+  background-color: black !important;
+} */
+
 .App {
   text-align: center;
   height: 100vh;
   overflow: hidden;
   padding-top: 200px;
+  transition: background 0.5s;
 }
 
 .container {
   height: 500px;
+}
+
+.sound-button {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  background-color: yellow;
+  border-radius: 10px;
+  border: 2px solid orange;
+  min-width: 50px;
+}
+
+.sound-icon {
+  color: orange;
+  font-size: 1.5rem;
 }
 
 #quote-box {
@@ -35,17 +55,11 @@
   color: white;
   font-weight: bold;
   margin: 10px 0;
-}
-
-a:visited {
-  color: white !important;
-}
-
-a:hover {
-  color: white !important;
+  transition: background 2s;
 }
 
 .new-quote {
   margin: 10px 0;
   font-weight: bold;
+  transition: background 2s;
 }
