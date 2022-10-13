@@ -7,7 +7,7 @@ import {
   faVolumeOff,
 } from "@fortawesome/free-solid-svg-icons";
 
-import newQuotes from "./new-quotes.json";
+import characterQuotes from "./quotes.json";
 
 import "./App.css";
 
@@ -27,7 +27,7 @@ function App() {
 
   const [currentQuote, setCurrentQuote] = useState({ text: "", author: "" });
   const [currentColor, setCurrentColor] = useState("primary");
-  const quotes = newQuotes;
+  const quotes = characterQuotes;
 
   const getRandomNumber = (upperLimit) =>
     Math.floor(Math.random() * upperLimit);
