@@ -86,13 +86,15 @@ function App() {
     audio.play();
     setCanPlaySound(true);
 
-    const currentQuote = getRandomQuote();
-    setCurrentQuote(currentQuote);
-
+    const currentRandomQuote = getRandomQuote();
     const currentRandomColor = getRandomColor();
-    if (currentRandomColor == currentColor) {
+    if (
+      currentRandomQuote == currentQuote ||
+      currentRandomColor == currentColor
+    ) {
       return newQuoteClickHandler();
     } else {
+      setCurrentQuote(currentRandomQuote);
       setCurrentColor(currentRandomColor);
     }
   };
