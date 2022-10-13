@@ -26,6 +26,16 @@
   border-radius: 10px;
   border: 2px solid orange;
   min-width: 50px;
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
 }
 
 .sound-icon {
@@ -75,7 +85,6 @@
   transition: background-color 2s;
 }
 
-
 .red {
   color: #e52826 !important;
 }
@@ -99,7 +108,6 @@
 .green {
   color: #468e27 !important;
 }
-
 
 .red {
   background-color: #e52826 !important;
