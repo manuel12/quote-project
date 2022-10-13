@@ -40,30 +40,30 @@ function App() {
 
   const pulpFictionColors = [
     {
-      "name": "red",
-      "code": "#e52826"
+      name: "red",
+      code: "#e52826",
     },
     {
-      "name": "yellow",
-      "code": "#ffe701"
+      name: "yellow",
+      code: "#ffe701",
     },
     {
-      "name": "black",
-      "code": "#121416"
+      name: "black",
+      code: "#121416",
     },
     {
-      "name": "orange",
-      "code": "#ef8e01"
+      name: "orange",
+      code: "#ef8e01",
     },
     {
-      "name": "blue",
-      "code": "#5098b2"
+      name: "blue",
+      code: "#5098b2",
     },
     {
-      "name": "green",
-      "code": "#468e27"
+      name: "green",
+      code: "#468e27",
     },
-  ]
+  ];
 
   const getRandomColor = () => {
     const colors = pulpFictionColors.map((colorObj) => colorObj.name);
@@ -105,15 +105,16 @@ function App() {
   return (
     <div className={`App ${currentColor}`}>
       <div className="container">
-        {canPlaySound && (
-          <button className="sound-button" onClick={soundButtonClickHandler}>
-            {soundEnabled ? (
-              <FontAwesomeIcon icon={faVolumeHigh} className="sound-icon" />
-            ) : (
-              <FontAwesomeIcon icon={faVolumeOff} className="sound-icon" />
-            )}
-          </button>
-        )}
+        <button
+          className={`sound-button ${canPlaySound ? "visible" : "hidden"}`}
+          onClick={soundButtonClickHandler}
+        >
+          {soundEnabled ? (
+            <FontAwesomeIcon icon={faVolumeHigh} className="sound-icon" />
+          ) : (
+            <FontAwesomeIcon icon={faVolumeOff} className="sound-icon" />
+          )}
+        </button>
 
         <div id="quote-box" className="bg-white">
           <FontAwesomeIcon icon={faQuoteLeft} className="left-quote" />
