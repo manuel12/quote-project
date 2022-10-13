@@ -134,7 +134,7 @@ function App() {
                 <a
                   id="tweet-quote"
                   href={tweetHref}
-                  target="_top"
+                  target="_blank"
                   className="text-light"
                 >
                   Tweet quote!
