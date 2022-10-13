@@ -11,7 +11,7 @@
   height: 100vh;
   overflow: hidden;
   padding-top: 200px;
-  transition: background-color 0.5s;
+  transition: background-color 1.5s, color 1.5s;
 }
 
 .container {
@@ -74,7 +74,7 @@
   color: white;
   font-weight: bold;
   margin: 10px 0;
-  transition: background-color 2s;
+  transition: background-color 1.5s !important;
 }
 
 .fa-share {
@@ -84,7 +84,7 @@
 .new-quote {
   margin: 10px 0;
   font-weight: bold;
-  transition: background-color 2s;
+  transition: background-color 1.5s !important;
 }
 
 .red {
