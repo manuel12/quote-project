@@ -80,7 +80,7 @@ function App() {
     setCurrentColor(currentColor);
   }, []);
 
-  const tweetHref = `http://twitter.com/intent/tweet?text="${currentQuote.text}" -${currentQuote.author}`;
+  const tweetHref = `http://twitter.com/intent/tweet?hashtags=quotes&hashtags=quentinTarantino&hashtags=pulpFiction&text="${currentQuote.text}" -${currentQuote.author}`;
 
   const newQuoteClickHandler = () => {
     audio.play();
