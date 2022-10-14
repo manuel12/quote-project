@@ -45,7 +45,7 @@ function App() {
     },
     {
       name: "yellow",
-      code: "#ffe701",
+      code: "#e2c000",
     },
     {
       name: "black",
@@ -118,7 +118,7 @@ function App() {
           )}
         </button>
 
-        <div id="quote-box" className="bg-white">
+        <div id="quote-box">
           <FontAwesomeIcon icon={faQuoteLeft} className="left-quote" />
           <div id="text" className="display-6 quote-text">
             {currentQuote.text}
