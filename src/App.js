@@ -57,7 +57,7 @@ function App() {
     },
     {
       name: "blue",
-      code: "#5098b2",
+      code: "#509cff",
     },
     {
       name: "green",
