@@ -7,11 +7,9 @@ import {
   faVolumeOff,
 } from "@fortawesome/free-solid-svg-icons";
 
-import characterQuotes from "./data/quotes.json";
+import quotes from "./data/quotes.json";
 
 import "./App.css";
-
-const quotes = characterQuotes;
 
 const pulpFictionWallpapers = [
   {
