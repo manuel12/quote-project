@@ -7,7 +7,7 @@ import {
   faVolumeOff,
 } from "@fortawesome/free-solid-svg-icons";
 
-import characterQuotes from "./quotes.json";
+import characterQuotes from "./data/quotes.json";
 
 import "./App.css";
 
@@ -98,10 +98,8 @@ function App() {
 
   const [currentQuote, setCurrentQuote] = useState({ text: "", author: "" });
   const [currentColor, setCurrentColor] = useState("primary");
-
-  const [currentBackground, setCurrentBackground] = useState(
-    "https://w0.peakpx.com/wallpaper/986/879/HD-wallpaper-droid-jules-fiction-pulp-pulp-fiction-quentin-tarantino.jpg"
-  );
+  const [currentBackground, setCurrentBackground] = useState(null);
+  const [backgroundCounter, setBackgroundCounter] = useState(0);
 
   useEffect(() => {
     const currentQuote = getRandomQuote();
@@ -109,31 +107,35 @@ function App() {
 
     const currentColor = getRandomColor();
     setCurrentColor(currentColor);
-
-    setInterval(() => {
-      const currentRandomBackground = getRandomBackground();
-      setCurrentBackground(currentRandomBackground);
-      console.log(currentBackground);
-    }, 5000);
   }, []);
 
   const tweetHref = `http://twitter.com/intent/tweet?hashtags=quotes&hashtags=quentinTarantino&hashtags=pulpFiction&text="${currentQuote.text}" -${currentQuote.author}`;
 
   const newQuoteClickHandler = () => {
+    console.log(backgroundCounter);
+    setBackgroundCounter(backgroundCounter + 1);
+
     audio.play();
     setCanPlaySound(true);
 
     const currentRandomQuote = getRandomQuote();
     const currentRandomColor = getRandomColor();
+    const currentRandomBackground = getRandomBackground();
 
     if (
       currentRandomQuote == currentQuote ||
-      currentRandomColor == currentColor
+      currentRandomColor == currentColor ||
+      currentRandomBackground == currentBackground
     ) {
       return newQuoteClickHandler();
     } else {
       setCurrentQuote(currentRandomQuote);
       setCurrentColor(currentRandomColor);
+
+      if (backgroundCounter > 4) {
+        setCurrentBackground(currentRandomBackground);
+        setBackgroundCounter(0);
+      }
     }
   };
 
