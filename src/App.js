@@ -29,7 +29,7 @@ const pulpFictionWallpapers = [
   {
     name: "dancing",
     url: "https://wallpaperaccess.com/full/3831481.png",
-  }
+  },
 ];
 const pulpFictionColors = [
   {
@@ -109,6 +109,12 @@ function App() {
 
     const currentColor = getRandomColor();
     setCurrentColor(currentColor);
+
+    setInterval(() => {
+      const currentRandomBackground = getRandomBackground();
+      setCurrentBackground(currentRandomBackground);
+      console.log(currentBackground);
+    }, 5000);
   }, []);
 
   const tweetHref = `http://twitter.com/intent/tweet?hashtags=quotes&hashtags=quentinTarantino&hashtags=pulpFiction&text="${currentQuote.text}" -${currentQuote.author}`;
@@ -119,10 +125,6 @@ function App() {
 
     const currentRandomQuote = getRandomQuote();
     const currentRandomColor = getRandomColor();
-    const currentRandomBackground = getRandomBackground();
-    setCurrentBackground(currentRandomBackground);
-
-    console.log(currentBackground);
 
     if (
       currentRandomQuote == currentQuote ||
