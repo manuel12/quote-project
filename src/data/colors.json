@@ -1,0 +1,26 @@
+[
+  {
+    "name": "red",
+    "code": "#e52826"
+  },
+  {
+    "name": "yellow",
+    "code": "#e2c000"
+  },
+  {
+    "name": "black",
+    "code": "#121416"
+  },
+  {
+    "name": "orange",
+    "code": "#ef8e01"
+  },
+  {
+    "name": "blue",
+    "code": "#509cff"
+  },
+  {
+    "name": "green",
+    "code": "#468e27"
+  }
+]
