@@ -8,53 +8,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import quotes from "./data/quotes.json";
+import colors from "./data/colors.json";
+import backgrounds from "./data/backgrounds.json"; 
+
 
 import "./App.css";
 
-const pulpFictionWallpapers = [
-  {
-    name: "jules",
-    url: "https://w0.peakpx.com/wallpaper/986/879/HD-wallpaper-droid-jules-fiction-pulp-pulp-fiction-quentin-tarantino.jpg",
-  },
-  {
-    name: "mia-nose",
-    url: "https://images5.alphacoders.com/489/489934.png",
-  },
-  {
-    name: "classic-shot",
-    url: "https://images7.alphacoders.com/693/693715.jpg",
-  },
-  {
-    name: "dancing",
-    url: "https://wallpaperaccess.com/full/3831481.png",
-  },
-];
-const pulpFictionColors = [
-  {
-    name: "red",
-    code: "#e52826",
-  },
-  {
-    name: "yellow",
-    code: "#e2c000",
-  },
-  {
-    name: "black",
-    code: "#121416",
-  },
-  {
-    name: "orange",
-    code: "#ef8e01",
-  },
-  {
-    name: "blue",
-    code: "#509cff",
-  },
-  {
-    name: "green",
-    code: "#468e27",
-  },
-];
 
 const getRandomNumber = (upperLimit) => Math.floor(Math.random() * upperLimit);
 
@@ -65,17 +24,17 @@ const getRandomQuote = () => {
 };
 
 const getRandomColor = () => {
-  const colors = pulpFictionColors.map((colorObj) => colorObj.name);
+  const colorsNames = colors.map((color) => color.name);
   const randomIndex = getRandomNumber(colors.length);
-  const randomColor = colors[randomIndex];
+  const randomColor = colorsNames[randomIndex];
   return randomColor;
 };
 
 const getRandomBackground = () => {
-  const backgroundNames = pulpFictionWallpapers.map(
-    (wallpaperObj) => wallpaperObj.name
+  const backgroundNames = backgrounds.map(
+    (background) => background.name
   );
-  const randomIndex = getRandomNumber(pulpFictionWallpapers.length);
+  const randomIndex = getRandomNumber(backgrounds.length);
   const randomBackground = backgroundNames[randomIndex];
   return randomBackground;
 };
