@@ -10,6 +10,22 @@
   transition: background-color 1.5s, color 1.5s;
 }
 
+.background-jules {
+  background-image: url("https://w0.peakpx.com/wallpaper/986/879/HD-wallpaper-droid-jules-fiction-pulp-pulp-fiction-quentin-tarantino.jpg");
+}
+
+.background-mia-nose {
+  background-image: url("https://images5.alphacoders.com/489/489934.png");
+}
+
+.background-classic-shot {
+  background-image: url("https://images7.alphacoders.com/693/693715.jpg");
+}
+
+.background-dancing {
+  background-image: url("https://wallpaperaccess.com/full/3831481.png");
+}
+
 .container {
   height: 500px;
 }
@@ -42,7 +58,7 @@
 }
 
 #quote-box {
-  background-color:antiquewhite;
+  background-color: antiquewhite;
   height: fit-content;
   width: 60%;
   padding: 10px 40px;
