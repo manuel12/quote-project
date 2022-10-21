@@ -10,26 +10,14 @@ import QuoteBox from "./components/QuoteBox";
 
 import "./App.css";
 
+const colorsNames = colors.map((color) => color.name);
+const backgroundNames = backgrounds.map((background) => background.name);
 const getRandomNumber = (upperLimit) => Math.floor(Math.random() * upperLimit);
 
-const getRandomQuote = () => {
-  const randomIndex = getRandomNumber(quotes.length);
-  const randomQuote = quotes[randomIndex];
-  return randomQuote;
-};
-
-const getRandomColor = () => {
-  const colorsNames = colors.map((color) => color.name);
-  const randomIndex = getRandomNumber(colors.length);
-  const randomColor = colorsNames[randomIndex];
-  return randomColor;
-};
-
-const getRandomBackground = () => {
-  const backgroundNames = backgrounds.map((background) => background.name);
-  const randomIndex = getRandomNumber(backgrounds.length);
-  const randomBackground = backgroundNames[randomIndex];
-  return randomBackground;
+const getRandomElementFromArr = (array) => {
+  const randomIndex = getRandomNumber(array.length);
+  const randomElement = array[randomIndex];
+  return randomElement;
 };
 
 const App = () => {
@@ -52,10 +40,10 @@ const App = () => {
   const [backgroundCounter, setBackgroundCounter] = useState(0);
 
   useEffect(() => {
-    const currentQuote = getRandomQuote();
+    const currentQuote = getRandomElementFromArr(quotes);
     setCurrentQuote(currentQuote);
 
-    const currentColor = getRandomColor();
+    const currentColor = getRandomElementFromArr(colorsNames);
     setCurrentColor(currentColor);
   }, []);
 
@@ -66,9 +54,9 @@ const App = () => {
     audio.play();
     setCanPlaySound(true);
 
-    const currentRandomQuote = getRandomQuote();
-    const currentRandomColor = getRandomColor();
-    const currentRandomBackground = getRandomBackground();
+    const currentRandomQuote = getRandomElementFromArr(quotes);
+    const currentRandomColor = getRandomElementFromArr(colorsNames);
+    const currentRandomBackground = getRandomElementFromArr(backgroundNames);
 
     if (
       currentRandomQuote == currentQuote ||
@@ -113,6 +101,6 @@ const App = () => {
       </div>
     </div>
   );
-}
+};
 
 export default App;
