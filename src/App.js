@@ -11,6 +11,77 @@ import characterQuotes from "./quotes.json";
 
 import "./App.css";
 
+const quotes = characterQuotes;
+
+const pulpFictionWallpapers = [
+  {
+    name: "jules",
+    url: "https://w0.peakpx.com/wallpaper/986/879/HD-wallpaper-droid-jules-fiction-pulp-pulp-fiction-quentin-tarantino.jpg",
+  },
+  {
+    name: "mia-nose",
+    url: "https://images5.alphacoders.com/489/489934.png",
+  },
+  {
+    name: "classic-shot",
+    url: "https://images7.alphacoders.com/693/693715.jpg",
+  },
+  {
+    name: "dancing",
+    url: "https://wallpaperaccess.com/full/3831481.png",
+  }
+];
+const pulpFictionColors = [
+  {
+    name: "red",
+    code: "#e52826",
+  },
+  {
+    name: "yellow",
+    code: "#e2c000",
+  },
+  {
+    name: "black",
+    code: "#121416",
+  },
+  {
+    name: "orange",
+    code: "#ef8e01",
+  },
+  {
+    name: "blue",
+    code: "#509cff",
+  },
+  {
+    name: "green",
+    code: "#468e27",
+  },
+];
+
+const getRandomNumber = (upperLimit) => Math.floor(Math.random() * upperLimit);
+
+const getRandomQuote = () => {
+  const randomIndex = getRandomNumber(quotes.length);
+  const randomQuote = quotes[randomIndex];
+  return randomQuote;
+};
+
+const getRandomColor = () => {
+  const colors = pulpFictionColors.map((colorObj) => colorObj.name);
+  const randomIndex = getRandomNumber(colors.length);
+  const randomColor = colors[randomIndex];
+  return randomColor;
+};
+
+const getRandomBackground = () => {
+  const backgroundNames = pulpFictionWallpapers.map(
+    (wallpaperObj) => wallpaperObj.name
+  );
+  const randomIndex = getRandomNumber(pulpFictionWallpapers.length);
+  const randomBackground = backgroundNames[randomIndex];
+  return randomBackground;
+};
+
 function App() {
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [canPlaySound, setCanPlaySound] = useState(false);
@@ -27,76 +98,10 @@ function App() {
 
   const [currentQuote, setCurrentQuote] = useState({ text: "", author: "" });
   const [currentColor, setCurrentColor] = useState("primary");
-  const quotes = characterQuotes;
 
-  const getRandomNumber = (upperLimit) =>
-    Math.floor(Math.random() * upperLimit);
-
-  const getRandomQuote = () => {
-    const randomIndex = getRandomNumber(quotes.length);
-    const randomQuote = quotes[randomIndex];
-    return randomQuote;
-  };
-
-  const pulpFictionWallpapers = [
-    {
-      name: "mia-nose",
-      url: "https://images5.alphacoders.com/489/489934.png",
-    },
-    {
-      name: "classic-shot",
-      url: "https://images7.alphacoders.com/693/693715.jpg",
-    },
-    {
-      name: "gta-style",
-      url: "https://c4.wallpaperflare.com/wallpaper/143/242/573/pulp-fiction-wallpaper-preview.jpg",
-    },
-    {
-      name: "mia",
-      url: "https://images4.alphacoders.com/133/133184.jpg",
-    },
-    {
-      name: "dancing",
-      url: "https://wallpaperaccess.com/full/3831481.png",
-    },
-    {
-      name: "pistols",
-      url: "https://m.media-amazon.com/images/I/51xF7-fzbQL.jpg",
-    }
-  ];
-  const pulpFictionColors = [
-    {
-      name: "red",
-      code: "#e52826",
-    },
-    {
-      name: "yellow",
-      code: "#e2c000",
-    },
-    {
-      name: "black",
-      code: "#121416",
-    },
-    {
-      name: "orange",
-      code: "#ef8e01",
-    },
-    {
-      name: "blue",
-      code: "#509cff",
-    },
-    {
-      name: "green",
-      code: "#468e27",
-    },
-  ];
-
-  const getRandomColor = () => {
-    const colors = pulpFictionColors.map((colorObj) => colorObj.name);
-    const randomIndex = getRandomNumber(colors.length);
-    const randomColor = colors[randomIndex];
-    return randomColor;
-  };
+  const [currentBackground, setCurrentBackground] = useState(
+    "https://w0.peakpx.com/wallpaper/986/879/HD-wallpaper-droid-jules-fiction-pulp-pulp-fiction-quentin-tarantino.jpg"
+  );
 
   useEffect(() => {
     const currentQuote = getRandomQuote();
@@ -114,6 +119,11 @@ function App() {
 
     const currentRandomQuote = getRandomQuote();
     const currentRandomColor = getRandomColor();
+    const currentRandomBackground = getRandomBackground();
+    setCurrentBackground(currentRandomBackground);
+
+    console.log(currentBackground);
+
     if (
       currentRandomQuote == currentQuote ||
       currentRandomColor == currentColor
@@ -131,7 +141,7 @@ function App() {
   };
 
   return (
-    <div className={`App ${currentColor}`}>
+    <div className={`App ${currentColor} background-${currentBackground}`}>
       <div className="container">
         <button
           className={`sound-button ${canPlaySound ? "visible" : "hidden"}`}
