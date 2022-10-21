@@ -38,6 +38,32 @@ function App() {
     return randomQuote;
   };
 
+  const pulpFictionWallpapers = [
+    {
+      name: "mia-nose",
+      url: "https://images5.alphacoders.com/489/489934.png",
+    },
+    {
+      name: "classic-shot",
+      url: "https://images7.alphacoders.com/693/693715.jpg",
+    },
+    {
+      name: "gta-style",
+      url: "https://c4.wallpaperflare.com/wallpaper/143/242/573/pulp-fiction-wallpaper-preview.jpg",
+    },
+    {
+      name: "mia",
+      url: "https://images4.alphacoders.com/133/133184.jpg",
+    },
+    {
+      name: "dancing",
+      url: "https://wallpaperaccess.com/full/3831481.png",
+    },
+    {
+      name: "pistols",
+      url: "https://m.media-amazon.com/images/I/51xF7-fzbQL.jpg",
+    }
+  ];
   const pulpFictionColors = [
     {
       name: "red",
