@@ -32,7 +32,7 @@ const getRandomBackground = () => {
   return randomBackground;
 };
 
-function App() {
+const App = () => {
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [canPlaySound, setCanPlaySound] = useState(false);
   const [soundVolume, setSoundVolume] = useState(0.3);
