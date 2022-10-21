@@ -1,19 +1,14 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faQuoteLeft,
-  faShare,
-  faVolumeHigh,
-  faVolumeOff,
-} from "@fortawesome/free-solid-svg-icons";
+import { faVolumeHigh, faVolumeOff } from "@fortawesome/free-solid-svg-icons";
 
 import quotes from "./data/quotes.json";
 import colors from "./data/colors.json";
-import backgrounds from "./data/backgrounds.json"; 
+import backgrounds from "./data/backgrounds.json";
 
+import QuoteBox from "./components/QuoteBox";
 
 import "./App.css";
-
 
 const getRandomNumber = (upperLimit) => Math.floor(Math.random() * upperLimit);
 
@@ -31,9 +26,7 @@ const getRandomColor = () => {
 };
 
 const getRandomBackground = () => {
-  const backgroundNames = backgrounds.map(
-    (background) => background.name
-  );
+  const backgroundNames = backgrounds.map((background) => background.name);
   const randomIndex = getRandomNumber(backgrounds.length);
   const randomBackground = backgroundNames[randomIndex];
   return randomBackground;
@@ -65,8 +58,6 @@ function App() {
     const currentColor = getRandomColor();
     setCurrentColor(currentColor);
   }, []);
-
-  const tweetHref = `http://twitter.com/intent/tweet?hashtags=quotes&hashtags=quentinTarantino&hashtags=pulpFiction&text="${currentQuote.text}" -${currentQuote.author}`;
 
   const newQuoteClickHandler = () => {
     console.log(backgroundCounter);
@@ -114,43 +105,11 @@ function App() {
             <FontAwesomeIcon icon={faVolumeOff} className="sound-icon" />
           )}
         </button>
-
-        <div id="quote-box">
-          <FontAwesomeIcon icon={faQuoteLeft} className="left-quote" />
-          <div id="text" className="display-6 quote-text">
-            {currentQuote.text}
-          </div>
-
-          <div
-            id="author"
-            className="quote-author"
-          >{`-${currentQuote.author}`}</div>
-
-          <div className="row">
-            <div className="col-md-6">
-              <button className={`tweet-quote btn ${currentColor}`}>
-                <FontAwesomeIcon icon={faShare} />
-                <a
-                  id="tweet-quote"
-                  href={tweetHref}
-                  target="_blank"
-                  className="text-light"
-                >
-                  Tweet quote!
-                </a>
-              </button>
-            </div>
-            <div className="col-md-6">
-              <button
-                className={`new-quote btn ${currentColor} text-light`}
-                id="new-quote"
-                onClick={newQuoteClickHandler}
-              >
-                Get a new quote!
-              </button>
-            </div>
-          </div>
-        </div>
+        <QuoteBox
+          currentQuote={currentQuote}
+          currentColor={currentColor}
+          newQuoteClickHandler={newQuoteClickHandler}
+        />
       </div>
     </div>
   );
