@@ -37,7 +37,6 @@ const App = () => {
   const [currentQuote, setCurrentQuote] = useState({ text: "", author: "" });
   const [currentColor, setCurrentColor] = useState("primary");
   const [currentBackground, setCurrentBackground] = useState(null);
-  const [backgroundCounter, setBackgroundCounter] = useState(0);
 
   useEffect(() => {
     const currentQuote = getRandomElementFromArr(quotes);
@@ -48,9 +47,6 @@ const App = () => {
   }, []);
 
   const newQuoteClickHandler = () => {
-    console.log(backgroundCounter);
-    setBackgroundCounter(backgroundCounter + 1);
-
     audio.play();
     setCanPlaySound(true);
 
@@ -67,11 +63,6 @@ const App = () => {
     } else {
       setCurrentQuote(currentRandomQuote);
       setCurrentColor(currentRandomColor);
-
-      if (backgroundCounter > 4) {
-        setCurrentBackground(currentRandomBackground);
-        setBackgroundCounter(0);
-      }
     }
   };
 
