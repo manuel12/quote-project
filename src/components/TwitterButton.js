@@ -1,11 +1,11 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShare } from "@fortawesome/free-solid-svg-icons";
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 const TwitterButton = (props) => {
   return (
     <button className={props.className}>
-      <FontAwesomeIcon icon={faShare} />
+      <FontAwesomeIcon icon={faTwitter} className="fa-twitter" />
       <a
         id="tweet-quote"
         href={props.tweetHref}
