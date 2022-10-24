@@ -6,7 +6,12 @@ import Button from "./Button";
 import TwitterButton from "./TwitterButton";
 
 const QuoteBox = (props) => {
-  const tweetHref = `http://twitter.com/intent/tweet?hashtags=quotes&hashtags=quentinTarantino&hashtags=pulpFiction&text="${props.currentQuote.text}" -${props.currentQuote.author}`;
+  const tweetHref = `
+  http://twitter.com/intent/tweet?
+  hashtags=quotes&
+  hashtags=quentinTarantino
+  &hashtags=pulpFiction&
+  text="${props.currentQuote.text}" -${props.currentQuote.author}`;
 
   return (
     <div id="quote-box">
@@ -25,7 +30,7 @@ const QuoteBox = (props) => {
           <TwitterButton
             className={`tweet-quote btn ${props.currentColor}`}
             tweetHref={tweetHref}
-            text={"Tweet quote!"}
+            text="Tweet quote!"
           />
         </div>
         <div className="col-md-6">
@@ -33,7 +38,7 @@ const QuoteBox = (props) => {
             className={`new-quote btn ${props.currentColor} text-light`}
             id="new-quote"
             onClick={props.newQuoteClickHandler}
-            text={"Get a new quote!"}
+            text="Get a new quote!"
           />
         </div>
       </div>
