@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  font-family: "Alfa Slab One", cursive !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.App {
+  text-align: center;
+  background-image: url("https://w0.peakpx.com/wallpaper/986/879/HD-wallpaper-droid-jules-fiction-pulp-pulp-fiction-quentin-tarantino.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 200px;
+  transition: background-color 1.5s, color 1.5s;
+}
+
+.background-jules {
+  background-image: url("https://w0.peakpx.com/wallpaper/986/879/HD-wallpaper-droid-jules-fiction-pulp-pulp-fiction-quentin-tarantino.jpg");
+}
+
+.background-mia-nose {
+  background-image: url("https://images5.alphacoders.com/489/489934.png");
+}
+
+.background-classic-shot {
+  background-image: url("https://images7.alphacoders.com/693/693715.jpg");
+}
+
+.background-dancing {
+  background-image: url("https://wallpaperaccess.com/full/3831481.png");
+}
+
+.container {
+  height: 500px;
+}
+
+.sound-button {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  background-color: yellow;
+  border-radius: 10px;
+  border: 0;
+  padding: 10px 20px;
+  width: 70px;
+  min-width: 50px;
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.sound-icon {
+  color: orange;
+  font-size: 1.5rem;
+}
+
+#quote-box {
+  background-color: antiquewhite;
+  height: fit-content;
+  width: 60%;
+  padding: 10px 40px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+
+.left-quote {
+  float: left;
+  font-size: 2rem;
+}
+
+.quote-text {
+  font-style: italic;
+  font-weight: 400 !important;
+}
+
+.quote-author {
+  margin: 20px 0 30px;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.tweet-quote {
+  color: white;
+  margin: 10px 0;
+  transition: background-color 1.5s !important;
+}
+
+.fa-twitter {
+  color: white;
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+.new-quote {
+  margin: 10px 0;
+  transition: background-color 1.5s !important;
+}
+
+.red {
+  background-color: #e52826 !important;
+  color: #e52826;
+}
+
+.yellow {
+  background-color: #e2c000 !important;
+  color: #e2c000;
+}
+
+.black {
+  background-color: #121416 !important;
+  color: #121416;
+}
+
+.orange {
+  background-color: #ef8e01 !important;
+  color: #ef8e01;
+}
+
+.blue {
+  background-color: #509cff !important;
+  color: #509cff;
+}
+
+.green {
+  background-color: #468e27 !important;
+  color: #468e27;
+}
