@@ -1,14 +1,6 @@
-@font-face {
-  font-family: "Aachen Bold";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Aachen Bold"),
-    url("ufonts.com_aachen-bold-opentype.woff") format("woff");
-}
-
 body {
   margin: 0;
-  font-family: "Aachen Bold", sans-serif !important;
+  font-family: "Alfa Slab One", cursive !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
